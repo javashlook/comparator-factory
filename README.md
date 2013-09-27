@@ -36,7 +36,7 @@ public class TestBean {
 ```java
 Comparator<TestBean> c = ComparatorFactory.forClass(TestBean.class)
 		.addProperty("i", Integer.class, false)
-		.addProperty("s", String.class, false)
+		.addProperty("s", String.class, true)
 		.addProperty("d", Date.class, false)
 		.generate();
 ```
@@ -49,7 +49,7 @@ class TestBeanComparator_$i_s_d implements Comparator<TestBean> {
 	public int compare(TestBean b1, TestBean b2) {
 		int c;
 		
-		c = ComparatorHelper.compare(b1.getI(), b2.getI());
+		c = -1 * ComparatorHelper.compare(b1.getI(), b2.getI());
 		if (c != null) {
 			return c;
 		}	
@@ -59,7 +59,7 @@ class TestBeanComparator_$i_s_d implements Comparator<TestBean> {
 			return c;
 		}	
 	
-		c = ComparatorHelper.compare(b1.getD(), b2.getD());
+		c = -1 * ComparatorHelper.compare(b1.getD(), b2.getD());
 		return c;
 	}
 }
