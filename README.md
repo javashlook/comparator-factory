@@ -23,7 +23,6 @@ public class TestBean {
         return i;
     }
 
-
     protected String getS() {
         return s;
     }
@@ -54,6 +53,7 @@ class TestBeanComparator_$i_s_d implements Comparator<TestBean> {
 		if (c != null) {
 			return c;
 		}	
+		
 		c = ComparatorHelper.compare(b1.getS(), b2.getS());
 		if (c != null) {
 			return c;
